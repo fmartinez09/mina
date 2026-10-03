@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mina Assistant</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Sessions">
+        <div class="sidebar-header">
+          <div>
+            <p class="eyebrow">Mina</p>
+            <h1>Assistant</h1>
+          </div>
+          <button class="icon-button" id="refreshButton" type="button" title="Refresh sessions" aria-label="Refresh sessions">
+            R
+          </button>
+        </div>
+
+        <button class="new-session-button" id="newSessionButton" type="button">New conversation</button>
+
+        <nav class="session-list" id="sessionList" aria-label="Session history"></nav>
+      </aside>
+
+      <main class="workspace">
+        <header class="topbar">
+          <div class="conversation-heading">
+            <p class="eyebrow">Assistant chat</p>
+            <h2 id="conversationTitle">New conversation</h2>
+          </div>
+
+          <div class="controls">
+            <label class="control">
+              <span>Text provider</span>
+              <select id="providerSelect"></select>
+            </label>
+
+            <label class="control">
+              <span>Model</span>
+              <input id="modelInput" list="modelOptions" autocomplete="off" />
+              <datalist id="modelOptions"></datalist>
+            </label>
+
+            <label class="control">
+              <span>Voice provider</span>
+              <select id="ttsProviderSelect"></select>
+            </label>
+
+            <label class="control">
+              <span>Voice</span>
+              <input id="voiceInput" list="voiceOptions" autocomplete="off" />
+              <datalist id="voiceOptions"></datalist>
+            </label>
+
+            <fieldset class="mode-control" aria-label="Output mode">
+              <legend>Output</legend>
+              <label>
+                <input type="radio" name="outputMode" value="text" checked />
+                <span>Text</span>
+              </label>
+              <label>
+                <input type="radio" name="outputMode" value="voice" />
+                <span>Voice</span>
+              </label>
+              <label>
+                <input type="radio" name="outputMode" value="both" />
+                <span>Both</span>
+              </label>
+            </fieldset>
+          </div>
+        </header>
+
+        <section class="status-bar" aria-live="polite">
+          <span class="status-dot" id="statusDot"></span>
+          <span id="statusText">Connecting</span>
+        </section>
+
+        <section class="messages" id="messages" aria-live="polite"></section>
+
+        <form class="composer" id="composer">
+          <label class="sr-only" for="messageInput">Message</label>
+          <textarea
+            id="messageInput"
+            rows="1"
+            placeholder="Type a message"
+            autocomplete="off"
+          ></textarea>
+          <button class="send-button" id="sendButton" type="submit">Send</button>
+        </form>
+      </main>
+    </div>
+
+    <script src="/static/app.js" defer></script>
+  </body>
+</html>

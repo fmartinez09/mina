@@ -1,0 +1,26 @@
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+
+# Python environments, caches, and package metadata
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Runtime data: databases, media, audio, backups, logs, and Qdrant storage
+/data/
+/.tmp/
+
+# Desktop dependencies and generated builds
+desktop/node_modules/
+desktop/dist/
+desktop/dist-electron/
+desktop/release/
+desktop/*.log
+desktop/*.err
+backend-dist/

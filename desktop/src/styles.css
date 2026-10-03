@@ -1,0 +1,191 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: rgb(var(--color-ink));
+  background: rgb(var(--color-canvas));
+  --color-canvas: 249 250 249;
+  --color-panel: 255 255 255;
+  --color-sidebar: 246 248 246;
+  --color-sidebar-ink: 62 78 66;
+  --color-surface: 250 251 250;
+  --color-field: 246 248 246;
+  --color-hover: 241 247 243;
+  --color-active: 232 244 235;
+  --color-composer: 226 242 230;
+  --color-composer-line: 196 222 202;
+  --color-user: 235 248 238;
+  --color-line: 230 235 230;
+  --color-muted: 127 143 130;
+  --color-ink: 19 46 27;
+  --color-brand: 104 159 119;
+  --color-brand-strong: 31 88 50;
+  --color-brand-soft: 232 246 236;
+  --color-warning: 183 120 38;
+  --color-danger: 190 62 70;
+}
+
+.theme-pink,
+[data-mina-theme="pink"] {
+  --color-composer: 253 232 241;
+  --color-composer-line: 246 196 218;
+  --color-user: 253 238 245;
+  --color-hover: 254 246 250;
+  --color-active: 253 232 241;
+  --color-brand: 218 126 164;
+  --color-brand-strong: 145 45 89;
+  --color-brand-soft: 253 235 243;
+  --color-ink: 72 30 49;
+  --color-sidebar-ink: 102 64 80;
+}
+
+.theme-purple,
+[data-mina-theme="purple"] {
+  --color-composer: 243 236 255;
+  --color-composer-line: 219 204 250;
+  --color-user: 247 240 255;
+  --color-hover: 250 247 255;
+  --color-active: 242 234 255;
+  --color-brand: 157 126 219;
+  --color-brand-strong: 83 55 145;
+  --color-brand-soft: 244 237 255;
+  --color-ink: 48 34 81;
+  --color-sidebar-ink: 81 67 107;
+}
+
+.theme-blue,
+[data-mina-theme="blue"] {
+  --color-composer: 226 240 255;
+  --color-composer-line: 193 218 246;
+  --color-user: 235 246 255;
+  --color-hover: 245 250 255;
+  --color-active: 226 240 255;
+  --color-brand: 113 157 218;
+  --color-brand-strong: 44 83 150;
+  --color-brand-soft: 232 243 255;
+  --color-ink: 30 50 82;
+  --color-sidebar-ink: 67 82 109;
+}
+
+.theme-green,
+[data-mina-theme="green"] {
+  --color-composer: 226 242 230;
+  --color-composer-line: 196 222 202;
+  --color-user: 235 248 238;
+  --color-hover: 241 247 243;
+  --color-active: 232 244 235;
+  --color-brand: 104 159 119;
+  --color-brand-strong: 31 88 50;
+  --color-brand-soft: 232 246 236;
+  --color-ink: 19 46 27;
+  --color-sidebar-ink: 62 78 66;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  min-height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+  -webkit-app-region: no-drag;
+}
+
+button,
+input,
+textarea,
+select,
+a,
+label,
+[role="button"] {
+  -webkit-app-region: no-drag;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled,
+input:disabled,
+textarea:disabled,
+select:disabled {
+  cursor: not-allowed;
+  opacity: 0.62;
+}
+
+textarea {
+  resize: none;
+  -webkit-user-select: text;
+  user-select: text;
+}
+
+input,
+textarea {
+  caret-color: rgb(var(--color-brand-strong));
+}
+
+.drag-region {
+  -webkit-app-region: drag;
+  user-select: none;
+}
+
+.no-drag {
+  -webkit-app-region: no-drag;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border: 3px solid transparent;
+  border-radius: 999px;
+  background: rgba(var(--color-muted), 0.34);
+  background-clip: content-box;
+}
+
+::selection {
+  color: rgb(var(--color-panel));
+  background: rgba(var(--color-brand-strong), 0.38);
+}
+
+input::selection,
+textarea::selection {
+  color: rgb(var(--color-panel));
+  background: rgba(var(--color-brand-strong), 0.44);
+}
+
+.mina-markdown,
+.mina-markdown * {
+  -webkit-user-select: text;
+  user-select: text;
+}
+
+.mina-markdown {
+  overflow-wrap: anywhere;
+}
